@@ -13,9 +13,9 @@
 <body>
   
   <div ng-controller="HomeCtrl">
-    <my-data-grid info="employees"></my-data-grid>
+    <my-grid info="employees"></my-grid>
 
-    <my-data-comp info="employees"></my-data-comp>
+    <my-comp info="employees"></my-comp>
 
   </div>
  
@@ -41,7 +41,7 @@
       ];
   }])
 
-  .directive('myDataGrid',function(){
+  .directive('myGrid',function(){
     return {
       restrict:'E',
       scope:{
@@ -67,7 +67,7 @@
     }
   })
 
-  .component('myDataComp',{
+  .component('myComp',{
     bindings:{
       info:'=info'
     },
