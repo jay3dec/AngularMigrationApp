@@ -20,7 +20,44 @@
   </div>
  
   
-  
+  <script type="text/ng-template" id="/directiveGrid.html">
+	<div class="panel panel-primary">
+  <div class="panel-heading">Site Point Directive Grid</div>
+   <table class="table">
+      <thead><tr><th>FirstName</th>
+        <th>Last Name</th>
+        <th>Location</th></tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="employee in info">
+        <td>{{ employee.firstName }}</td>
+        <td>{{ employee.lastName }}</td>
+        <td>{{ employee.location }}</td>
+        </tr>
+      </tbody>
+     </table>
+</div>
+  </script>
+
+
+  <script type="text/ng-template" id="/componentGrid.html">
+	<div class="panel panel-primary">
+  <div class="panel-heading">Site Point Directive Grid</div>
+   <table class="table">
+      <thead><tr><th>FirstName</th>
+        <th>Last Name</th>
+        <th>Location</th></tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="employee in $ctrl.info">
+        <td>{{ employee.firstName }}</td>
+        <td>{{ employee.lastName }}</td>
+        <td>{{ employee.location }}</td>
+        </tr>
+      </tbody>
+     </table>
+</div>
+  </script>
 
 
  
@@ -47,23 +84,7 @@
       scope:{
         info:'=info'
       },
-      template:[
-      '<div class="panel panel-primary">',
-  '<div class="panel-heading">Site Point Directive Grid</div>',
-   '<table class="table">',
-      '<thead><tr><th>FirstName</th>',
-        '<th>Last Name</th>',
-        '<th>Location</th></tr>',
-      '</thead>',
-      '<tbody>',
-        '<tr ng-repeat="employee in info">',
-        '<td>{{ employee.firstName }}</td>',
-        '<td>{{ employee.lastName }}</td>',
-        '<td>{{ employee.location }}</td>',
-        '</tr>',
-      '</tbody>',
-     '</table>',
-'</div>'].join('')
+      templateUrl : '/directiveGrid.html'
     }
   })
 
@@ -72,24 +93,7 @@
       info:'=info'
     },
     
-    template:[
-      '<div class="panel panel-primary">',
-  '<div class="panel-heading">Site Point Component Grid</div>',
-   '<table class="table">',
-      '<thead><tr><th>FirstName</th>',
-        '<th>Last Name</th>',
-        '<th>Location</th></tr>',
-      '</thead>',
-      '<tbody>',
-        '<tr ng-repeat="employee in $ctrl.info">',
-        '<td>{{ employee.firstName }}</td>',
-        '<td>{{ employee.lastName }}</td>',
-        '<td>{{ employee.location }}</td>',
-        '</tr>',
-      '</tbody>',
-     '</table>',
-'</div>'].join('')
-
+    templateUrl : '/componentGrid.html'
   });
 
 
