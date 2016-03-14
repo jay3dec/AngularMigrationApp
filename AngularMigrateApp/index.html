@@ -67,15 +67,17 @@
   <script type="text/javascript">
 
   angular.module('myApp',[])
-
-  .controller('HomeCtrl',['$scope',function($scope){
-      $scope.employees = [
+  
+  .constant('employees', [
         {firstName: 'Roy',lastName:'NoMendees',location:'New Delhi'},
         {firstName: 'Hari',lastName:'John',location:'Chennai'},
         {firstName: 'Rahul',lastName:'Kurup',location:'Bangalore'},
         {firstName: 'Samson',lastName:'Davis',location:'Mumbai'},
         {firstName: 'Shilpa',lastName:'Agarwal',location:'Noida'}
-      ];
+      ])
+
+  .controller('HomeCtrl',['$scope','employees',function($scope,employees){
+      $scope.employees = employees;
   }])
 
   .directive('myGrid',function(){
